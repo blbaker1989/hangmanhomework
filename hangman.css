@@ -1,0 +1,160 @@
+
+body {
+  background:#F0F8FF;
+  font-family: sans-serif;
+  color:$white;
+  height:100%;
+  text-align:center;
+  font-size:18px;
+}
+
+
+.wrappper{
+  @include clear;
+  width:100%;
+  margin:0 auto;
+
+}
+
+h1, h2, h3 {
+	font-family: sans-serif;
+	/*font-weight: 100;*/
+	text-transform: uppercase;
+   margin:5px 0;
+   text-align: center;
+   font-size: 10px;
+
+}
+
+h1 {
+	font-size: 15px;
+  color: #5F9EA0;
+  font-family: fantasy;
+}
+
+h2 {
+	font-size: 15px;
+
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
+  font-family: fantasy;
+
+}
+
+#alphabet {
+  /*@include clear;*/
+  margin:15px auto;
+  padding:20;
+  max-width:1000px;
+  text-align: center;
+  font-size: 30px;
+}
+
+#alphabet li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width:60px;
+  height:30px;
+  padding: 20px;
+  background:$white;
+  color:$base-color;
+  cursor:pointer;
+  @include corners(5px);
+  border: solid 1px $white;
+  text-align: center;
+
+/*
+    &:hover {
+      background:blue;
+      border: solid 1px $white;
+      color:$white;
+    };*/
+}
+
+#my-word {
+  margin: 100px;
+  display: block;
+  padding: 10px;
+
+
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: auto;
+  display: inline-block;
+  padding: 0 20px;
+  font-size:30px;
+  color: Black;
+  bottom: -25px;
+  text-align: center;
+
+}
+
+.active {
+  @include opacity;
+  cursor:default;
+
+  /*&:hover{
+      @include fade;
+      @include opacity;
+    }*/
+}
+
+.category {
+  color: black;
+  text-align: center;
+  top: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 10px 10px 5px #888888;
+  font-family: fantasy;
+
+}
+
+#mylives{
+  font-size:30px;
+  font-weight: bold;
+  text-align:center;
+  display:block;
+  text-shadow: 10px 10px 5px #888888;
+}
+
+button{
+  @include corners (5px);
+  background:#5F9EA0;
+  color:white;
+  border: solid 3px $white;
+  text-decoration:none;
+  cursor:pointer;
+  font-size:1.2em;
+  padding:18px 10px;
+  width:180px;
+  margin: 10px;
+  outline: none;
+  box-shadow: 10px 10px 5px #888888;
+
+    &:hover{
+      @include transition;
+      background:$white;
+      border: solid 1px $white;
+      color:$base-color;
+    }
+}
+
+@media (max-width: 767px) {
+  #alphabet {
+  padding:0 0 0 15px;
+}
+  }
+
+  @media (max-width: 480px) {
+  #alphabet {
+  padding:0 0 0 25px;
+}
+  }
