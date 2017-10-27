@@ -1,3 +1,7 @@
+// var audioElement = document.createElement("audio");
+// audioElement.setAttribute("src", "Assets/Portugal_The_Man_Feel_It_Still_Official_Video_.mp3");
+//thought about putting music in
+
 window.onload = function () {
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
@@ -6,22 +10,22 @@ window.onload = function () {
 
   var categories;
   var chosenCategory;
-  var getHint ;
   var word ;
   var guess ;
   var guesses = [ ];
   var lives ;
   var counter ;
   var space;
+  var guessedLetters;
 
-  // Get elements
+  // get elements by id
   var showLives = document.getElementById("mylives");
   var showCatagory = document.getElementById("scatagory");
 
 
 
 
-  // create alphabet ul
+  // create alphabet unordered list
   var buttons = function () {
     myButtons = document.getElementById('buttons');
     letters = document.createElement('ul');
@@ -38,7 +42,7 @@ window.onload = function () {
   };
 
 
-  // Select Catagory
+  // select catagories
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
       catagoryName.innerHTML = "The Category is: NFL Football Teams";
@@ -107,7 +111,12 @@ window.onload = function () {
   };
 
 
-  // Play
+  document.onkeyup = function(event) {
+      var yourGuess = event.key;
+      guessedLetters.push(guesses);
+};
+
+
   play = function () {
     categories = [
         ["patriots", "bears", "seahawks", "redskins", "cowboys", "panthers", "dolphins"],
@@ -131,9 +140,6 @@ window.onload = function () {
   }
 
   play();
-
-
-   // Reset
 
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
